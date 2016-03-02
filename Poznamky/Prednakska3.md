@@ -11,7 +11,7 @@ Generování dokumentace pomocí javadoc
 . toUpperCase
 - trim
 
-## ArrayList<E> - generická třída (<E>)
+## ArrayList\<E\> - generická třída (\<E\>)
 - Instance je **seznam objektů**.
 - **Indexovaná** kolekce.
 - **Stejný prvek lze vložit vícekrát**.
@@ -21,7 +21,7 @@ Generování dokumentace pomocí javadoc
 - metoda get(int index) - vrátí prvek na indexu E
 
 # Třídy pro práci s kolekcemi
-## HashSet<E>
+## HashSet\<E\>
 - Instance je množina objektů.
 - Je možné zjisti, zda prvek z U do množinypatří, či ne.
 - **Každý prvek  je unikátní*, nelze vložit např. 2x jedničku typu Integer.  
@@ -29,7 +29,7 @@ Generování dokumentace pomocí javadoc
 - Navrženo pro rychlé vyhledávání
 - Lze použít pro odstranění duplicit, pokud do kolekce nasypu všechny data.
 
-## HashMap<K, V>
+## HashMap\<K, V\>
 - Slovník, který obsahuje uspořádané dvojice hodnot.
 - Key & Value
 - Vyhledává se pomocí klíče, který vrátí odpovídající hodnotu.
