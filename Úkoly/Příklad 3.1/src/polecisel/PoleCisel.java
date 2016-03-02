@@ -203,16 +203,32 @@ public class PoleCisel {
      * Seradi pole poleCisel vzestupne s vyuzitim algoritmu BubbleSort.
      */
     public void bubbleSort() {
-        // TODO add your code here 
+        for (int i = 0; i < poleCisel.length; i++) {
+            // Indikuje, zda je vše seřazeno
+            // Vv případě, že projdeme celé pole a nic nezměníme, tak máme seřazeno
+            boolean hotovo = true;
+            for (int j = 0; j < poleCisel.length - 1 - i; j++) {
+                if (poleCisel[j] > poleCisel[j + 1]) {
+                    int cache = poleCisel[j];
+                    poleCisel[j] = poleCisel[j + 1];
+                    poleCisel[j + 1] = cache;
+                    hotovo = false;
+                }
+            }
+
+            if (hotovo) {
+                break;
+            }
+        }
     }
 
     /**
      * Seradi usek poleCisel[left .. right] z poleCisel s vyuzitim algoritmu
      * MergeSort.
      *
-     * @param left index leveho krajniho prvku v useku poleCisel[left .. right]
+     * @param left  index leveho krajniho prvku v useku poleCisel[left .. right]
      * @param right index praveho krajniho prvku v useku poleCisel[left ..
-     * right]
+     *              right]
      */
     public void mergeSort(int left, int right) {
         int n = right - left + 1;  // pocet razenych cisel
@@ -232,10 +248,10 @@ public class PoleCisel {
      * 1 .. right] tak, ze cely usek poleCisel[left .. right] bude vzestupne
      * serazen.
      *
-     * @param left index leveho krajniho prvku v useku poleCisel[left .. right]
+     * @param left   index leveho krajniho prvku v useku poleCisel[left .. right]
      * @param center index prostredniho prvku v useku poleCisel[left .. right]
-     * @param right index praveho krajniho prvku v useku poleCisel[left ..
-     * right]
+     * @param right  index praveho krajniho prvku v useku poleCisel[left ..
+     *               right]
      */
     private void merge(int left, int center, int right) {
         int n = right - left + 1;
@@ -316,6 +332,7 @@ public class PoleCisel {
     /**
      * Vraci true prave kdyz prvky poleCisel tvori neklesajici posloupnost,
      * jinak vraci false.
+     *
      * @return Vraci true prave kdyz prvky poleCisel tvori neklesajici posloupnost,
      * jinak vraci false.
      */
@@ -331,9 +348,16 @@ public class PoleCisel {
 
     public static boolean testMergeSort(int pocetPrvku, int rozsah) {
         PoleCisel novePole = new PoleCisel(pocetPrvku, rozsah);
-        novePole.mergeSort(0, pocetPrvku - 1);        
+        novePole.mergeSort(0, pocetPrvku - 1);
         return novePole.kontrolaRazeni();
     }
+
+    public static boolean testBubleSort(int pocetPrvku, int rozsah) {
+        PoleCisel novePole = new PoleCisel(pocetPrvku, rozsah);
+        novePole.bubbleSort();
+        return novePole.kontrolaRazeni();
+    }
+
 
     public static void testSoucinPrvku() {
         PoleCisel novePole = new PoleCisel();
@@ -346,7 +370,10 @@ public class PoleCisel {
         testMergeSort();
         System.out.println("Test MergeSort: Kontrola razeni 1000 000 prvku: " + testMergeSort(1000000, 1000000));
         System.out.println("");
-        testSoucinPrvku();
-    }
 
+        testSoucinPrvku();
+        System.out.println("");
+
+        System.out.println("Test BubleSort: Kontrola razeni 100 000 prvku: " + testBubleSort(100000, 100000));
+    }
 }
