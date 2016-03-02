@@ -27,5 +27,9 @@ Generování dokumentace pomocí javadoc
 - **Každý prvek  je unikátní*, nelze vložit např. 2x jedničku typu Integer.  
 - **Není indexovaná**
 - Navrženo pro rychlé vyhledávání
+- Lze použít pro odstranění duplicit, pokud do kolekce nasypu všechny data.
 
 ## HashMap<K, V>
+- Slovník, který obsahuje uspořádané dvojice hodnot.
+- Key & Value
+- Vyhledává se pomocí klíče, který vrátí odpovídající hodnotu.
