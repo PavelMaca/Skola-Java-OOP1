@@ -204,6 +204,8 @@ public class Scitacka {
         testScitaniJednicek(new BigInteger("0"));
 
         testScitaniJednicek(new BigInteger("-156"));
+
+        testScitaniJednicek(new BigInteger("222222222222222222222222"));
     }
 
 }
