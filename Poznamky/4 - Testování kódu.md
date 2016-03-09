@@ -14,3 +14,34 @@
 - používání zapouzdření sníží pravděpodobnost chyb
 - šance odhalení se zvýší použitím modularizace a správné dokumentace
 
+## Pojmy
+**Testování** - hledání chyb  
+**Ladění** - hledání příčin chyb
+Chyba se může projevit v jiném části kódu než se zprvu může zdát.  
+
+## Techniky testování a ladění
+### Testování jednotek
+- jednotka je metoda třídy, modul (packagev Javě)
+- provádí se během vývoje
+- je vytvářena sada testů
+- test driven development vs nejprve kód a pak testy (po částech)
+
+#### Základy testování
+- je třeba porozumět, co by měla jednotka dělat
+- pozitivní i negativní testy
+- testy okrajových případů
+
+### Automatizované testování
+- testování jednotek
+- knihovna JUnit
+- umožnuje opakování
+- testovací třídy
+- testované případy
+- aserce
+- testovací přípravky
+
+### Ruční procházení
+
+### Ladicí tiksy
+
+### Debuggry
