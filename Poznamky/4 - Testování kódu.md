@@ -14,12 +14,12 @@
 - používání zapouzdření sníží pravděpodobnost chyb
 - šance odhalení se zvýší použitím modularizace a správné dokumentace
 
-## Pojmy
+
 **Testování** - hledání chyb  
 **Ladění** - hledání příčin chyb
 Chyba se může projevit v jiném části kódu než se zprvu může zdát.  
 
-## Techniky testování a ladění
+## Techniky testování
 ### Testování jednotek
 - jednotka je metoda třídy, modul (packagev Javě)
 - provádí se během vývoje
@@ -32,16 +32,42 @@ Chyba se může projevit v jiném části kódu než se zprvu může zdát.
 - testy okrajových případů
 
 ### Automatizované testování
-- testování jednotek
-- knihovna JUnit
-- umožnuje opakování
-- testovací třídy
-- testované případy
-- aserce
-- testovací přípravky
+- umožnuje opakované běhy testů
+- regresivní testování = opakovaný běch všech testů
+- píšeme testovací třídy
+- **po přidání nové funkcionality se musí aktualizovat testy**
+- testovací frameworky (knihovna JUnit, viz níže)
+
+## Ladění
+- důležita je schopnost čtení kódu
 
 ### Ruční procházení
+- procházení kódu pomocí čtení
+- kód se nespouští
+- vysokoúrovňové = procházení krokově po metodách
+- nízkoúrvňové = procházení každého řádku
+- tabelování = urdžování si přehledu jakou hodnot má která proměnná
+- verbální průchod = vysvětlení kódu kolegovi
 
 ### Ladicí tiksy
+- v průběhu kódu vypíši nějaký stav objektu, či proměnné, která mě zajímá
+- lze použít např. System.out.print
+- efektivní pouze, pokud se ladí na správném místě
+- výstup může být objemný
 
 ### Debuggry
+- automatizují proces ladění
+- umožňijí zastavit program naa určitém řádku
+- stepover - krokování po řádcích, ale přeskočí obsahy použitých metod
+- stepinto - po řádcích, včetně všech řádků použitých metod (heauresticky)
+- zabrazuje pořadí v jakém byly metody volány
+
+# JUnit
+- testovací framework
+- testovací případy = metody které obsahují testy
+- možnost vygenerovat testovací třídu v IDE
+
+## Aserce (assert)
+- používá se k vyhodnocení testu
+- udává se očekáváná a reálná hodnota
+- vrací true/false
